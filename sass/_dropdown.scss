@@ -1,0 +1,65 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    @include breakpointDown(tablet) {
+        display: block;
+    }
+
+    &:first-child {
+        .dropdown-content {
+            left: -80px;
+        }
+
+    }
+
+    &:nth-child(2) {
+        .dropdown-content {
+            left: -30px;
+        }
+    }
+
+    &-content {
+        position: absolute;
+        display: none;
+        background: #fff;
+        box-shadow: 2px 2px 14px #00000033;
+        padding: rem(22) 24px;
+        border-radius: 10px;
+        margin-top: rem(20);
+        transition: display 0.5s ease-in-out;
+
+          @include breakpointDown(tablet) {
+              position: static;
+          }
+
+        a {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            gap: 10px;
+            font-size: rem(14) !important;
+
+            span {
+                font-size: rem(14);
+            }
+
+        }
+    }
+
+    .show {
+        display: block;
+
+    }
+
+    .dropbtn {
+        img {
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+
+}

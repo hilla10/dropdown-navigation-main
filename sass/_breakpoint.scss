@@ -1,0 +1,23 @@
+// Brakpoints
+
+$breakpoints: (
+    mobile: rem(668),
+    tablet: rem(994)
+);
+
+@mixin breakpointUp($size) {
+    $breakpoint-values: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $breakpoint-values) {
+        @content
+    }
+};
+
+
+@mixin breakpointDown($size) {
+    $breakpoint-values: map-get($breakpoints, $size);
+
+    @media screen and (max-width: $breakpoint-values) {
+        @content
+    }
+}

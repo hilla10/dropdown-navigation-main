@@ -1,0 +1,75 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: rem(30) rem(40) rem(60);
+    gap: rem(60);
+
+    @include breakpointDown(tablet) {
+        gap: rem(30);
+        padding: rem(22) rem(30) rem(60);
+    }
+
+    &__navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+
+            img {
+                width: 14px;
+            }
+
+        @include breakpointDown(tablet) {
+            display: block;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: rem(300);
+            height: 100%;
+            padding: rem(82) rem(24) rem(30);
+            transition: transform 0.5s ease-in-out;
+            transform: translateX(300%);
+        }
+
+  &.active {
+      transform: translateX(0);
+  }
+
+        ul {
+            display: flex;
+            align-items: flex-start;
+            gap: rem(38);
+
+            @include breakpointDown(tablet) {
+                display: block;
+                margin-bottom: 30px;
+
+                &:nth-child(2) {
+                    li {
+                        text-align: center;
+                    }
+                }
+
+                li {
+                    padding: rem(20);
+                }
+            }
+
+            a {
+                color: $mediumGray;
+                font-size: 16px;
+                transition: color 400ms ease-in;
+
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+    }
+
+
+          
+}

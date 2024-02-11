@@ -1,0 +1,40 @@
+.hamburger {
+    position: absolute;
+    top: rem(22);
+    right: rem(42);
+    cursor: pointer;
+    z-index: 100;
+    display: block;
+
+    @include breakpointUp(tablet) {
+        display: none;
+    }
+
+    .bar {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: rem(36);
+        height: 3px;
+        margin: 5px 0;
+        background: $black;
+        transition: 0.5s ease-in-out;
+    }
+
+    &.active {
+        .bar {
+
+            &:first-child {
+                transform: rotate(45deg) translate(15px, 8px);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(3px, 5px);
+            }
+        }
+    }
+}

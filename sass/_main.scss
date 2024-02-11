@@ -1,0 +1,93 @@
+.main {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpointDown(tablet) {
+        width: 80%;
+        margin: -120px auto;
+    }
+
+    @include breakpointDown(mobile) {
+        width: 100%;
+        margin: -50px auto;
+    }
+
+    &__section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: rem(100);
+        margin-top: rem(90);
+
+        @include breakpointDown(tablet) {
+            grid-template-columns: 1fr;
+            gap: rem(60);
+            text-align: center;
+            width: 100%;
+            margin-top: rem(30);
+
+            &-item {
+                order: 2;
+            }
+
+            @include breakpointDown(mobile) {
+                &:first-child {
+                    width: 100%;
+                    margin: 0 rem(50);
+                }
+            }
+        }
+
+    }
+
+    .bg__img {
+        background: url('../images/image-hero-desktop.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: rem(658);
+
+        @include breakpointDown(tablet) {
+            order: 1;
+            background: url('../images/image-hero-mobile.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        @include breakpointDown(mobile) {
+            margin: 0 auto;
+            width: 70%;
+            max-height: rem(310);
+        }
+    }
+
+    .section-img {
+        transform: translateY(130px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: rem(40);
+
+        @include breakpointDown(tablet) {
+            transform: translateY(50px);
+            margin-bottom: rem(150);
+        }
+
+        @include breakpointDown(mobile) {
+            gap: rem(20);
+            margin: 0 30px;
+            transform: translateY(62px);
+            margin-bottom: rem(100);
+        }
+    }
+
+}
